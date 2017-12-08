@@ -4,6 +4,7 @@ var beepBoop = function(number) {
 
 //Global variables, functions, and arrays.
 var num;
+var numString;
 var numArray = [];
 var zero = 0;
 var one = 1;
@@ -46,12 +47,22 @@ var divisibleByThree = function(num) {
     return false;
   }
 }; // End of 'divisibleByThree' function.
+// SPEC 5: Can determine whether or not the user number value is a number.
+var isNumber =  function(num) {
+  if (num === NaN) {
+    console.log(num+" (Not a Number).");
+    return true;
+  } else {
+    console.log(num+" is a number.");
+  }
+}
 
 // FRONT END LOGIC
 $(document).ready(function() {
   $("#form1").submit(function(event) {
     event.preventDefault();
     var num = parseInt($("#input1").val());
+    var numString = $("#input1").val();
     var numArray = [];
     var results = beepBoop(num);
     $("#output1").text(results);
@@ -64,10 +75,10 @@ $(document).ready(function() {
     var hasOne_Test = hasOne(num);
     //TEST: divisibleByThree
     var divisibleByThree_Test = divisibleByThree(num);
+    //TEST: isNumber
+    var isNumberTest = isNumber(num);
 
 /* TEST FUNCTION TEMPLATES
-    //TEST: function_name
-    var function_name Test = function_name(num);
     //TEST: function_name
     var function_name Test = function_name(num);
     //TEST: function_name
