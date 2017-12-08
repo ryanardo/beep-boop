@@ -26,6 +26,16 @@ var hasZero = function(num) {
   }
 }; // End of 'hasZero' function.
 
+// SPEC 3: Can determine if a number has a 1 in it.
+var hasOne = function(num) {
+  if (num.toString().match(one)) {
+    console.log(num+" contains 1 value in it.");
+    return true;
+  } else {
+    console.log(num+" does not contain a 1 value.");
+  }
+}; //End of 'hasOne' function.
+
 // FRONT END LOGIC
 $(document).ready(function() {
   $("#form1").submit(function(event) {
@@ -35,9 +45,12 @@ $(document).ready(function() {
     var results = beepBoop(num);
     $("#output1").text(results);
 
-    //countUp
+    //TEST: countUp
     var countUp1 = countUp(num);
-    //hasZero
+    //TEST: hasZero
     var hasZero1 = hasZero(num);
+    //TEST: hasOne
+    var hasOne1 = hasOne(num);
+    //TEST:
   }); //End of 'form submit' listener.
 }); // End of 'document.ready' listener.
