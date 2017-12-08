@@ -24,7 +24,7 @@ _If you give me a number, I'll display an array containing all of numbers, start
 ## SETUP/INSTALLATION REQUIREMENTS
 
 * Download and install an up to date web browser
-* Click [here](https://github.com/ryanglenferris/beep-boop.git) to get to the [Beep! Boop!](GITHUB_IO_URL) project.
+* Click [here](https://github.com/ryanglenferris/beep-boop.git) to get to the [Beep! Boop!](https://ryanglenferris.github.io/beep-boop/) project.
 
 ## KNOWN BUGS
 
