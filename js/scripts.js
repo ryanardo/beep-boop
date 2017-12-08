@@ -1,21 +1,25 @@
 // BACK END LOGIC
-var beepBoop = function(number) {
-
-}
 //Global variables, functions, and arrays.
 var num;
 var numString;
 var numReplaced;
 var numArray = [];
+var newArray = [];
+var prevArray = [];
 var zero = 0;
 var one = 1;
 // SPEC 1: It can count up to the provided number.
 var countUp =  function(num) {
   for(i=0; i <= num; i++) {
     numArray.push(i)
+    newArray.push(replaceValue(i));
+    prevArray.push(replaceValue(i));
+    var appendItem = replaceValue(i);
+    $("#output1").append("<li>"+i+": "+appendItem+"</li>")
   };
   console.log("countUp: numArray["+numArray+"]");
-  return false;
+  console.log("countUp: newArray["+newArray+"]");
+  console.log("countUp: prevArray["+prevArray+"]");
 }; // End of 'countUp' function.
 // SPEC 2: Can determine if a number has a 0 in it.
 var hasZero = function(num) {
@@ -83,9 +87,8 @@ $(document).ready(function() {
     var num = parseInt($("#input1").val());
     var numString = $("#input1").val();
     var numArray = [];
-    var results = beepBoop(num);
-    $("#output1").text(results);
-
+    $("#output2").empty();
+    $("#output1").empty();
     //TEST: countUp
     var countUp_Test = countUp(num);
     //TEST: hasZero
@@ -98,23 +101,11 @@ $(document).ready(function() {
     var isNumberTest = isNumber(num);
     //TEST: replaceValue
     var replaceValueTest = replaceValue(num);
-
-/* TEST FUNCTION TEMPLATES
-    //TEST: function_name
-    var function_name Test = function_name(num);
-    //TEST: function_name
-    var function_name Test = function_name(num);
-    //TEST: function_name
-    var function_name Test = function_name(num);
-    //TEST: function_name
-    var function_name Test = function_name(num);
-    //TEST: function_name
-    var function_name Test = function_name(num);
-    //TEST: function_name
-    var function_name Test = function_name(num);
-    //TEST: function_name
-    var function_name Test = function_name(num);
-*/
-
+    // document.getElementById("form1").reset();
   }); //End of 'form submit' listener.
 }); // End of 'document.ready' listener.
+
+/* TEST_FUNCTION_TEMPLATE
+// TEST: function_name
+var function_name Test = function_name(num);
+*/
