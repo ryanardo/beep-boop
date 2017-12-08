@@ -1,14 +1,14 @@
 // BACK END LOGIC
 var beepBoop = function(number) {
-}
 
+}
 //Global variables, functions, and arrays.
 var num;
 var numString;
+var numReplaced;
 var numArray = [];
 var zero = 0;
 var one = 1;
-
 // SPEC 1: It can count up to the provided number.
 var countUp =  function(num) {
   for(i=0; i <= num; i++) {
@@ -56,6 +56,25 @@ var isNumber =  function(num) {
     console.log(num+" is a number.");
   }
 }
+// SPEC 6: It can replace a value with another value.
+var replaceValue = function(num) {
+  if (hasZero(num) === true) {
+    var numReplaced = "'Beep!'"
+    console.log("replace "+num+" with "+numReplaced);
+    return numReplaced;
+  } else if (hasOne(num) === true) {
+    var numReplaced = "'Boop!'"
+    console.log("replace "+num+" with "+numReplaced);
+    return numReplaced;
+  } else if (divisibleByThree(num) === true) {
+    var numReplaced = "I'm sorry, Dave. I'm afraid I can't do that."
+    console.log("replace "+num+" with '"+numReplaced+"'");
+    return numReplaced;
+  } else {
+    console.log(num+" does not contain either the digits 0 or 1, and is not divisible by 3.");
+    return num;
+  }
+}; // End of 'replaceValue' function.
 
 // FRONT END LOGIC
 $(document).ready(function() {
@@ -77,10 +96,10 @@ $(document).ready(function() {
     var divisibleByThree_Test = divisibleByThree(num);
     //TEST: isNumber
     var isNumberTest = isNumber(num);
+    //TEST: replaceValue
+    var replaceValueTest = replaceValue(num);
 
 /* TEST FUNCTION TEMPLATES
-    //TEST: function_name
-    var function_name Test = function_name(num);
     //TEST: function_name
     var function_name Test = function_name(num);
     //TEST: function_name
