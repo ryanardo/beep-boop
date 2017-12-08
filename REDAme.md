@@ -1,41 +1,41 @@
-# TITLE
+# BEEP! BOOP!
 
-#### _ SUBTITLE _
+**Beep! Boop! Hi there! If you give me a number, I'll give you some _siiiiilly_ results! Go ahead, give it a try!**
 
-By **Ryan G Ferris**
+By: **Ryan G Ferris**
 
-## Description
+## DESCRIPTION
 
-_DESCRIPTION_
+_If you give me a number, I'll display an array containing all of numbers, starting at 0 up until I reach the number you gave me! If any number in that array contains a 0 in it, I'll convert the number to "Beep!"; or if any number contains a 1 I'll replace it with a "Boop!"; and finally, if the number is divisible by 3 I'll replace it with "I'm sorry, Dave. I'm afraid I can't do that." Wow! Much fun! So Blast! Much authentic!_
 
-## Specs
+## SPECS
 
-| Spec | Input | Output |
-| :------------- | :------------- | :------------- |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
-| Column_A | Column_B | Column_C |
+| Behavior | Input | Output |  
+| :------------- | :------------- | :------------- |  
+| It can count up to the provided number. | 2 | [0,1,2] |  
+| Can determine if a number has a 0 in it. | 80 | TRUE |  
+| Can determine if a number has a 1 in it. | 21 | TRUE |  
+| Program can divide a number by 3. | 32 | 8 |  
+| Can determine whether or not the user input value is a number. | 300 Spartans | FALSE |  
+| It can replace a value with another value. | apple | orange |  
+| Create an array of numbers | 0 through 10 | [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] |  
+| It can repeat a process given different values. | 1 + 1 = 2 | 2 + 2 = 4 |  
 
-## Setup/Installation Requirements
+## SETUP/INSTALLATION REQUIREMENTS
 
 * Download and install an up to date web browser
-* Click on the following [link](GitHub_Repository_Link) to use the Roman Numeral Converter!
+* Click [here](https://github.com/ryanglenferris/beep-boop.git) to get to the [Beep! Boop!](GITHUB_IO_URL) project.
 
-## Known Bugs
+## KNOWN BUGS
 
-_There are currently no known bugs or issues. Please [message](mailto:ryanglenferris@gmail.com) me if you run into any and I'll do my best to fix them as quickly as possible!_
+* _There are currently no known bugs or issues. Please [message](mailto:ryanglenferris@gmail.com) me if you run into any and I'll do my best to fix them as quickly as possible!_
+* Click [here](https://github.com/ryanglenferris/beep-boop.git) to view the code for the project Beep! Boop!
 
-## Support and contact details
+## SUPPORT AND CONTACT DETAILS
 
 _Email me at [ryanglenferris@gmail.com](mailto:ryanglenferris@gmail.com) if you have any questions, comments, concerns, or just a general desire to chat with me! I look forward to hearing from you!_
 
-## Technologies Used
+## TECHNOLOGIES USED
 
 * _HTML_
 * _CSS_
@@ -44,7 +44,7 @@ _Email me at [ryanglenferris@gmail.com](mailto:ryanglenferris@gmail.com) if you 
 * _Git_
 * _GitHub_
 
-### License
+### LICENSE
 
 Copyright (c) 2017 ****_Ryan G Ferris_****
 
