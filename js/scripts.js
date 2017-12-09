@@ -1,111 +1,70 @@
 // BACK END LOGIC
-//Global variables, functions, and arrays.
 var num;
-var numString;
-var numReplaced;
 var numArray = [];
-var newArray = [];
-var prevArray = [];
-var zero = 0;
-var one = 1;
-// SPEC 1: It can count up to the provided number.
-var countUp =  function(num) {
-  for(i=0; i <= num; i++) {
-    numArray.push(i)
-    newArray.push(replaceValue(i));
-    prevArray.push(replaceValue(i));
-    var appendItem = replaceValue(i);
-    $("#output1").append("<li>"+i+": "+appendItem+"</li>")
-  };
-  console.log("countUp: numArray["+numArray+"]");
-  console.log("countUp: newArray["+newArray+"]");
-  console.log("countUp: prevArray["+prevArray+"]");
-}; // End of 'countUp' function.
-// SPEC 2: Can determine if a number has a 0 in it.
-var hasZero = function(num) {
-  if (num.toString().match(zero)) {
-    console.log(num+" contains 0 value in it.");
-    return true;
-  } else {
-    console.log(num+" does NOT contain a 0 value.");
-    return false;
-  }
-}; // End of 'hasZero' function.
-// SPEC 3: Can determine if a number has a 1 in it.
-var hasOne = function(num) {
-  if (num.toString().match(one)) {
-    console.log(num+" contains 1 value in it.");
-    return true;
-  } else {
-    console.log(num+" does NOT contain a 1 value.");
-    return false;
-  }
-}; //End of 'hasOne' function.
-// SPEC 4: Program can divide a number by 3.
-var divisibleByThree = function(num) {
-  if (num % 3 === 0) {
-    console.log(num+" is divisible by 3");
-    return true;
-  } else {
-    console.log(num+" is NOT divisible by 3");
-    return false;
-  }
-}; // End of 'divisibleByThree' function.
-// SPEC 5: Can determine whether or not the user number value is a number.
-var isNumber =  function(num) {
-  if (num === NaN) {
-    console.log(num+" (Not a Number).");
-    return true;
-  } else {
-    console.log(num+" is a number.");
-  }
-}
-// SPEC 6: It can replace a value with another value.
-var replaceValue = function(num) {
-  if (hasZero(num) === true) {
-    var numReplaced = "'Beep!'"
-    console.log("replace "+num+" with "+numReplaced);
-    return numReplaced;
-  } else if (hasOne(num) === true) {
-    var numReplaced = "'Boop!'"
-    console.log("replace "+num+" with "+numReplaced);
-    return numReplaced;
-  } else if (divisibleByThree(num) === true) {
-    var numReplaced = "I'm sorry, Dave. I'm afraid I can't do that."
-    console.log("replace "+num+" with '"+numReplaced+"'");
-    return numReplaced;
-  } else {
-    console.log(num+" does not contain either the digits 0 or 1, and is not divisible by 3.");
-    return num;
-  }
-}; // End of 'replaceValue' function.
+var convertArray = [];
+var beep = "Beep!";
+var boop = "Boop!";
+var dave = "I'm sorry, Dave. I'm afraid I can't do that.";
+var numbers = function(num) {
+  for(i = 0; i <= num; i++) {
+    if (i % 3 == 0 && i.toString().includes("1") && i.toString().includes("0")) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+beep+" "+boop+" "+dave);
+      numArray.push(i);
+      convertArray.push(beep+" "+boop+" "+dave);
+      console.log(i+" All Criteria met!");
+    } else if (i % 3 === 0 && i.toString().includes("1")) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+beep+" "+dave+"</li>");
+      numArray.push(i);
+      convertArray.push(beep+" "+dave);
+      console.log(i+" contains a One AND is divisible by 3.");
+    } else if (i % 3 === 0 && i.toString().includes("0")) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+boop+" "+dave+"</li>");
+      numArray.push(i);
+      convertArray.push(boop+" "+dave);
+      console.log(i+" contains a One AND is divisible by 3.");
+    } else if ((i.toString().includes("0")) && (i.toString().includes("1"))) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+beep+" "+boop+"</li>");
+      numArray.push(i);
+      convertArray.push(beep+" "+boop);
+      console.log(i+" contained a Zero AND a One.");
+    } else if (i.toString().includes("0")) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+beep+"</li>");
+      numArray.push(i);
+      convertArray.push(beep);
+      console.log(i+" contained a Zero value.");
+    } else if (i.toString().includes("1")) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+boop+"</li>");
+      numArray.push(i);
+      convertArray.push(boop);
+      console.log(i+" contained a One value.");
+    } else if (i % 3 === 0) {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+dave+"</li>");
+      numArray.push(i);
+      convertArray.push(dave);
+      console.log(i+" was divisible by Three.");
+    } else {
+      $("#output1").append("<li class='list-group-item'>"+i+"</li>");
+      $("#output2").append("<li class='list-group-item'>"+i+"</li>");
+      numArray.push(i);
+      convertArray.push(i);
+      console.log(i+" met NONE of the Criteria.");
+    }
+  }; // End of the 'for-loop'.
+}; // End of 'numbers' function.
 
 // FRONT END LOGIC
 $(document).ready(function() {
   $("#form1").submit(function(event) {
     event.preventDefault();
+    $(".list-group-item").remove();
     var num = parseInt($("#input1").val());
-    var numString = $("#input1").val();
-    var numArray = [];
-    $("#output2").empty();
-    $("#output1").empty();
-    //TEST: countUp
-    var countUp_Test = countUp(num);
-    //TEST: hasZero
-    var hasZero_Test = hasZero(num);
-    //TEST: hasOne
-    var hasOne_Test = hasOne(num);
-    //TEST: divisibleByThree
-    var divisibleByThree_Test = divisibleByThree(num);
-    //TEST: isNumber
-    var isNumberTest = isNumber(num);
-    //TEST: replaceValue
-    var replaceValueTest = replaceValue(num);
-    // document.getElementById("form1").reset();
+    var results = numbers(num);
   }); //End of 'form submit' listener.
 }); // End of 'document.ready' listener.
-
-/* TEST_FUNCTION_TEMPLATE
-// TEST: function_name
-var function_name Test = function_name(num);
-*/

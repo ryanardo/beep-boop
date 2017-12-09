@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
@@ -14,19 +14,28 @@
       <form id="form1">
         <div class="row" id="row1">
           <div class="col-lg-8 form-group">
-            <input id="input1" class="form-control" type="text" value=>
+            <div class="input-group">
+              <input id="input1" type="number" class="form-control" placeholder="Enter a number" aria-describedby="basic-addon2" value=312>
+              <span id="basic-addon2">
+                <button type="submit" name="button" class="btn btn-primary">SEARCH</button>
+              </span>
+            </div>
           </div>
           <div class="col-lg-4 button">
-            <button type="submit" name="button" class="btn btn-primary">Calculate your Beep! Boop!</button>
           </div>
         </div>
       </form>
 
       <div class="container">
-        <h2>RESULTS:</h2>
-        <ul id="output1">
-        </ul>
+        <!-- <h2 class="hide">RESULTS:</h2> -->
+        <div class="row" id="row2">
+          <div class="col-sm-4" id="output1">
+          </div>
+          <div class="col-sm-8" id="output2">
+          </div>
+        </div>
       </div>
+
     </div>
   </body>
 </html>
